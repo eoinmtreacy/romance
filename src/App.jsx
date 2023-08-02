@@ -7,11 +7,10 @@ import { shuffler } from "./shuffler.js";
 import './App.css'
 
 const blob = shuffler(food);
-//console.log(blob);
-
 
 function App() {
   const [current, setCurrent] = useState(0);
+  
 
   function handleClickNext() {
     if (current < blob.length - 1) {
