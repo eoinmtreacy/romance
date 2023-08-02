@@ -3,14 +3,10 @@ export default function Tile({ en, src, fr, es, pt, it }) {
       <>
       <div>
         <img className="tilePic" src={src} alt={en} />
-        <img alt="fr" src="/fr.svg"></img>
-          <button>{fr}</button>
-        <img alt="es" src="/es.svg">
-          </img><button>{es}</button>
-          <img alt="pt" src="/pt.svg"></img>
-        <button>{pt}</button>
-          <img alt="it" src="/it.svg"></img>
-        <button>{it}</button>
+        <Translation lang={fr} flag="fr"/>
+        <Translation lang={es} flag="es"/>
+        <Translation lang={pt} flag="pt"/>
+        <Translation lang={it} flag="it"/>
       </div>
       <div>
         <button>Quiz</button>
@@ -19,3 +15,11 @@ export default function Tile({ en, src, fr, es, pt, it }) {
     );
   }
   
+  function Translation ({lang, flag}) {
+    return(
+      <>
+      <img alt={lang} src={"/" + flag + ".svg"}></img>
+          <button>{lang}</button>
+          </>
+    )
+  }
