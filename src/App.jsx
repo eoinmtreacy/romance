@@ -10,6 +10,7 @@ const blob = shuffler(food);
 
 function App() {
   const [current, setCurrent] = useState(0);
+  
 
   function handleClickNext() {
     if (current < blob.length - 1) {

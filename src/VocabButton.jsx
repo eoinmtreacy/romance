@@ -1,8 +1,9 @@
 export default function VocabButton ({lang, flag}) {
     return(
-      <>
+      <fragment>
       <img alt={lang} src={"/" + flag + ".svg"}></img>
-          <button>{lang}</button>
-          </>
+          
+          <input className="vocabBox" type="text" value={lang}></input>
+          </fragment>
     )
   }
