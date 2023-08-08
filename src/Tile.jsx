@@ -11,21 +11,17 @@ function ButtonBuilder ({fr, es, pt, it, quiz, guess, setGuess}) {
     { vocab: it, flag: "it"}
   ]
 
-  let problems
+  if (quiz === true && guess === "") {
+    shuffler(dialects)
+  } 
 
-  if (quiz === true) {
-    problems = shuffler(dialects)
-  } else{
-    problems = dialects
-  }
-
-  let buttons = problems.map((p) => (
-      <VocabButton lang={p.vocab} flag={p.flag} isTarget={false} guess={guess} setGuess={setGuess}/>
+  let buttons = dialects.map((d) => (
+      <VocabButton lang={d.vocab} flag={d.flag} isTarget={false} guess={guess} setGuess={setGuess}/>
   ))
 
   if (quiz === true) {
     buttons.splice(0,1,
-      <VocabButton lang="" flag={problems[0].flag} isTarget={true} guess={guess} setGuess={setGuess}/>)
+      <VocabButton lang="" flag={dialects[0].flag} isTarget={true} guess={guess} setGuess={setGuess}/>)
   }
 
   
