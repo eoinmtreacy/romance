@@ -1,9 +1,13 @@
-export default function VocabButton ({lang, flag}) {
+import { useState } from "react"
+
+export default function VocabButton ({lang, flag, isTarget}) {
+  const [guess, setGuess] = useState("")
+
     return(
       <fragment>
       <img alt={lang} src={"/" + flag + ".svg"}></img>
           
-          <input className="vocabBox" type="text" value={lang}></input>
+          <input className="vocabBox" type="text" value={isTarget ? guess : lang} onChange={isTarget ? (e) => setGuess(e.target.value) : null}></input>
           </fragment>
     )
   }

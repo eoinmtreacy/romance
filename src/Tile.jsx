@@ -22,12 +22,12 @@ function ButtonBuilder ({fr, es, pt, it, quiz}) {
   }
 
   let buttons = problems.map((p) => (
-      <VocabButton lang={p.vocab} flag={p.flag}/>
+      <VocabButton lang={p.vocab} flag={p.flag} isTarget={false}/>
   ))
 
   if (quiz === true) {
     buttons.splice(0,1,
-      <VocabButton lang="" flag={problems[0].flag}/>)
+      <VocabButton lang="" flag={problems[0].flag} isTarget={true}/>)
   }
 
   
