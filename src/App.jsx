@@ -11,27 +11,35 @@ const blob = shuffler(food);
 function App() {
   const [current, setCurrent] = useState(0);
   const [quiz, setQuiz] = useState(false)
+  const [guess, setGuess] = useState("")
 
   function handleClickNext() {
     if (current < blob.length - 1) {
       setCurrent(current + 1);
+      setGuess("")
     }
     if (quiz === true) {
       setQuiz(false)
+      setGuess("")
     }
   }
 
   function handleClickPrev() {
     if (current > 0) {
       setCurrent(current - 1);
+      setGuess("")
+    
     }
     if (quiz === true) {
       setQuiz(false)
+      setGuess("")
+     
     }
   }
 
   function handleQuizClick() {
     quiz ? setQuiz(false) : setQuiz(true)
+    setGuess("")
   }
 
   return (
@@ -46,6 +54,8 @@ function App() {
           it={blob[current].it}
           quiz={quiz}
           handleQuizClick={handleQuizClick}
+          guess={guess}
+          setGuess={setGuess}
         />
       </div>
       <div className="navigation">
