@@ -19,7 +19,6 @@ function App() {
     if (quiz === true) {
       setQuiz(false)
     }
-    
   }
 
   function handleClickPrev() {
@@ -29,7 +28,6 @@ function App() {
     if (quiz === true) {
       setQuiz(false)
     }
-    
   }
 
   function handleQuizClick() {
