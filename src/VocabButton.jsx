@@ -1,6 +1,7 @@
 import { useState } from "react"
 
-export default function VocabButton ({lang, flag, isTarget, guess, setGuess}) {
+export default function VocabButton ({lang, flag, isTarget}) {
+  const [guess, setGuess] = useState("")
 
     return(
       <>
