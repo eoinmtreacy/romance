@@ -8,13 +8,24 @@ export default function VocabButton ({lang, flag, isTarget, quiz}) {
     setGuess("")
   }
 
+  let score;
+
+  if (quiz === true && isTarget) { 
+    score = lvs(guess, lang)
+    console.log(score)
+  }
+
+  if (score === 0) {
+    alert("Congratulations! You guessed it right.")
+  }
+
     return(
       <>
       <img alt={lang} src={"/" + flag + ".svg"}></img>
           
           <input className="vocabBox" type="text" value={isTarget ? guess : lang} onChange={isTarget ? (e) => setGuess(e.target.value) : (e) => setGuess(lang)}></input>
 
-          <b>      </b>
+          <b></b>
 
           </>
     )

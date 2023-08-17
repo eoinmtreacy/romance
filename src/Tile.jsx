@@ -21,7 +21,7 @@ function ButtonBuilder ({fr, es, pt, it, quiz}) {
 
   if (quiz === true) {
     buttons.splice(0,1,
-      <VocabButton lang="" flag={dialects[0].flag} isTarget={true} quiz={quiz}/>)
+      <VocabButton lang={dialects[0].vocab} flag={dialects[0].flag} isTarget={true} quiz={quiz}/>)
   }
 
   
