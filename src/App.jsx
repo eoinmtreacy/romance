@@ -4,6 +4,9 @@ import Tile from "./Tile.jsx";
 import NavButton from "./NavButton.jsx";
 import { shuffler } from "./shuffler.js";
 import ImageSearch from "./ImageSearch.jsx";
+import ImageSearchShutterstock from "./ImageSearchShutterstock.jsx"
+import ImageSearchPixabay from "./ImageSearchPixabay.jsx"
+import ImageSearchFlickr from "./ImageSearchFlickr.jsx"
 
 import './App.css'
 
@@ -46,7 +49,10 @@ function App() {
 
   return (
     <>
-    <ImageSearch prompt={blob[current].en}/>
+          <ImageSearch prompt={blob[current].en}/>
+
+<ImageSearchPixabay prompt={blob[current].en}/>
+<ImageSearchFlickr prompt={blob[current].en}/>
       <div className="tile">
         <Tile
           src={blob[current].img}
@@ -63,6 +69,8 @@ function App() {
         <NavButton forward={false} handleClick={handleClickPrev} />
         <NavButton forward={true} handleClick={handleClickNext} />
       </div>
+
+
     </>
   );
 }
