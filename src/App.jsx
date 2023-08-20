@@ -3,6 +3,7 @@ import { food } from "./food.js";
 import Tile from "./Tile.jsx";
 import NavButton from "./NavButton.jsx";
 import { shuffler } from "./shuffler.js";
+import ImageSearch from "./ImageSearch.jsx";
 
 import './App.css'
 
@@ -11,6 +12,8 @@ const blob = shuffler(food);
 function App() {
   const [current, setCurrent] = useState(0);
   const [quiz, setQuiz] = useState(false)
+
+  
 
   function handleClickNext() {
     if (current < blob.length - 1) {
@@ -43,6 +46,7 @@ function App() {
 
   return (
     <>
+    <ImageSearch />
       <div className="tile">
         <Tile
           src={blob[current].img}
