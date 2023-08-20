@@ -6,17 +6,22 @@ const ImageSearch = ({prompt}) => {
   const [imageUrl, setImageUrl] = useState('');
 
   const handleSearch = async () => {
-    const apiKey = '38946832-b88d3db1439f74c5b4d13cfec';
-    const apiUrl = `https://pixabay.com/api/?key=${apiKey}&q=${prompt}&image_type=photo`;
+    const apiKey = 'qSzMCedWrSstW0PhIwfvY72moOSWQfMgWPT9bxHTcxkyCuUiZM4rTA1i';
+    const apiUrl = `https://api.pexels.com/v1/search?query=${prompt}&per_page=1`;
 
     try {
-      const response = await axios.get(apiUrl);
-      const imageLink = response.data.hits[0].largeImageURL;
-      setImageUrl(imageLink);
-    } catch (error) {
-      console.error('Error fetching image:', error);
-    }
-  };
+        const response = await axios.get(apiUrl, {
+          headers: {
+            Authorization: apiKey,
+          },
+        });
+  
+        const imageLink = response.data.photos[0].src.large;
+        setImageUrl(imageLink);
+      } catch (error) {
+        console.error('Error fetching image:', error);
+      }
+    };
 
   handleSearch();
 
