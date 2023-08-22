@@ -19,7 +19,7 @@ function App()
 
   return (
     <>
-      <ImageSearch prompt={blob[current].en} />
+      <ImageSearch prompt={blob[current].en current={current}} />
       <div className="tile">
         <Tile
           src={blob[current].img}
