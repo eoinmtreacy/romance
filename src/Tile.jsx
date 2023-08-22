@@ -1,9 +1,8 @@
-import VocabButton from "./VocabButton.jsx"
-import {shuffler} from "./shuffler.js"
+import VocabBox from "./VocabBox"
+import {shuffler} from "./tools/shuffler.js"
 
-function ButtonBuilder ({fr, es, pt, it, quiz}) {
-
-
+export default function Tile({ en, src, fr, es, pt, it, quiz, setQuiz}) 
+{
   let dialects = [
     { vocab: fr, flag: "fr"},
     { vocab: es, flag: "es"},
@@ -11,30 +10,31 @@ function ButtonBuilder ({fr, es, pt, it, quiz}) {
     { vocab: it, flag: "it"}
   ]
 
-  if (quiz === true) {
+  if (quiz === true) 
+  {
     dialects = shuffler(dialects)
   } 
 
   let buttons = dialects.map((d) => (
-      <VocabButton lang={d.vocab} flag={d.flag} isTarget={false} quiz={quiz}/>
+      <VocabBox lang={d.vocab} flag={d.flag} isTarget={false} quiz={quiz}/>
   ))
 
-  if (quiz === true) {
+  if (quiz === true) 
+  {
     buttons.splice(0,1,
-      <VocabButton lang={dialects[0].vocab} flag={dialects[0].flag} isTarget={true} quiz={quiz}/>)
+      <VocabBox lang={dialects[0].vocab} flag={dialects[0].flag} isTarget={true} quiz={quiz}/>)
   }
 
-  
-  return(buttons)
-}
-
-export default function Tile({ en, src, fr, es, pt, it, quiz, handleQuizClick}) {
-
+  function handleQuizClick() 
+  {
+    quiz ? setQuiz(false) : setQuiz(true)
+  }
     return (
       <>
       <div>
         <img className="tilePic" src={src} alt={en} />
-        <ButtonBuilder fr={fr} es={es} pt={pt} it={it} quiz={quiz}/>
+        
+        <>{buttons}</>
       </div>
 
       <div>

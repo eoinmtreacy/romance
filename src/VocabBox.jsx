@@ -1,7 +1,7 @@
 import { useState } from "react"
-import { lvs } from "./lvs"
+import { lvs } from "./tools/lvs"
 
-export default function VocabButton ({lang, flag, isTarget, quiz}) {
+export default function VocabBox ({lang, flag, isTarget, quiz}) {
   const [guess, setGuess] = useState("")
 
   if (quiz === false && guess !== "") {
@@ -24,9 +24,6 @@ export default function VocabButton ({lang, flag, isTarget, quiz}) {
       <img alt={lang} src={"/" + flag + ".svg"}></img>
           
           <input className="vocabBox" type="text" value={isTarget ? guess : lang} onChange={isTarget ? (e) => setGuess(e.target.value) : (e) => setGuess(lang)}></input>
-
-          <b></b>
-
           </>
     )
   }

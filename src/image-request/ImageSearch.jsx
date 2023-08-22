@@ -27,6 +27,7 @@ const ImageSearch = ({prompt}) => {
 
   return (
     <div>
+      <h3>Plexel</h3>
       {imageUrl && <img className="logo" src={imageUrl} alt="Searched" />}
     </div>
   );

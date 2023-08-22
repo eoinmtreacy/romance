@@ -1,52 +1,25 @@
 import { useState } from 'react'
-import { food } from "./food.js";
+import { food } from "./vocab-lists/food.js";
 import Tile from "./Tile.jsx";
 import NavButton from "./NavButton.jsx";
-import { shuffler } from "./shuffler.js";
-import ImageSearch from "./ImageSearch.jsx";
+import { shuffler } from "./tools/shuffler.js";
+import ImageSearch from "./image-request/ImageSearch.jsx";
+//import ImageSearchShutterstock from "./ImageSearchShutterstock.jsx"
+//import ImageSearchPixabay from "./ImageSearchPixabay.jsx"
+//import ImageSearchFlickr from "./ImageSearchFlickr.jsx"
 
 import './App.css'
 
 const blob = shuffler(food);
 
-function App() {
+function App() 
+{
   const [current, setCurrent] = useState(0);
   const [quiz, setQuiz] = useState(false)
 
-  
-
-  function handleClickNext() {
-    if (current < blob.length - 1) {
-      setCurrent(current + 1);
-
-    }
-    if (quiz === true) {
-      setQuiz(false)
-
-    }
-  }
-
-  function handleClickPrev() {
-    if (current > 0) {
-      setCurrent(current - 1);
-
-    
-    }
-    if (quiz === true) {
-      setQuiz(false)
-
-     
-    }
-  }
-
-  function handleQuizClick() {
-    quiz ? setQuiz(false) : setQuiz(true)
-
-  }
-
   return (
     <>
-    <ImageSearch prompt={blob[current].en}/>
+      <ImageSearch prompt={blob[current].en} />
       <div className="tile">
         <Tile
           src={blob[current].img}
@@ -56,13 +29,15 @@ function App() {
           pt={blob[current].pt}
           it={blob[current].it}
           quiz={quiz}
-          handleQuizClick={handleQuizClick}
+          setQuiz={setQuiz}
         />
       </div>
       <div className="navigation">
-        <NavButton forward={false} handleClick={handleClickPrev} />
-        <NavButton forward={true} handleClick={handleClickNext} />
+        <NavButton direction={false} current={current} setCurrent={setCurrent} blob={blob} quiz={quiz} setQuiz={setQuiz}/>
+        <NavButton direction={true} current={current} setCurrent={setCurrent} blob={blob} quiz={quiz} setQuiz={setQuiz}/>
       </div>
+
+
     </>
   );
 }
