@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import axios from "axios";
 
-const ImageSearch = ({prompt}) => {
-  //const [searchTerm, setSearchTerm] = useState('');
+const ImageSearch = ({current, blob}) => {
   const [imageUrl, setImageUrl] = useState('');
+  const [urlArray, setUrlArray] = useState([])
+
+  const prompt = blob[current].en
 
   const handleSearch = async () => {
     const apiKey = 'qSzMCedWrSstW0PhIwfvY72moOSWQfMgWPT9bxHTcxkyCuUiZM4rTA1i';
