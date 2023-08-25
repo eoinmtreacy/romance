@@ -20,10 +20,10 @@ export default function VocabBox ({lang, flag, isTarget, quiz}) {
   }
 
     return(
-      <>
-      <img alt={lang} src={"/" + flag + ".svg"}></img>
+      <div className="inline-flex"> 
+      <img className="" alt={lang} src={"/" + flag + ".svg"}></img>
           
-          <input className="vocabBox" type="text" value={isTarget ? guess : lang} onChange={isTarget ? (e) => setGuess(e.target.value) : (e) => setGuess(lang)}></input>
-          </>
+          <input type="text" value={isTarget ? guess : lang} onChange={isTarget ? (e) => setGuess(e.target.value) : (e) => setGuess(lang)}></input>
+          </div>
     )
   }

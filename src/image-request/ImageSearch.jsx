@@ -50,12 +50,13 @@ const ImageSearch = ({current, blob}) => {
     });
   }
 
-  //setImageUrl(urlArr[current])
-
   return (
-    <div>
-      <h3>Source: Pexel</h3>
-      {<img className="logo" src={urlArr[current]} alt="Searched" />}
+    <div className="font-sans grid grid-cols-1 content-center">
+      <div className="content-center">
+      <h3 >Source: Pexel</h3>
+      {<img  src={urlArr[current]} alt="Searched" />}
+      </div>
+      
     </div>
   );
 };

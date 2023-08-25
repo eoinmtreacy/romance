@@ -15,7 +15,8 @@ export default function Tile({ en, src, fr, es, pt, it, quiz, setQuiz})
     dialects = shuffler(dialects)
   } 
 
-  let buttons = dialects.map((d) => (
+  let buttons = dialects.map((d) => 
+  (
       <VocabBox lang={d.vocab} flag={d.flag} isTarget={false} quiz={quiz}/>
   ))
 
@@ -32,11 +33,8 @@ export default function Tile({ en, src, fr, es, pt, it, quiz, setQuiz})
     return (
       <>
       <div>
-        <img className="tilePic" src={src} alt={en} />
-        
         <>{buttons}</>
       </div>
-
       <div>
         <button onClick={handleQuizClick}>{quiz ? "Do Over" : "Quiz"}</button>
       </div>

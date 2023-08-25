@@ -4,10 +4,6 @@ import Tile from "./Tile.jsx";
 import NavButton from "./NavButton.jsx";
 import { shuffler } from "./tools/shuffler.js";
 import ImageSearch from "./image-request/ImageSearch.jsx";
-//import ImageSearchShutterstock from "./ImageSearchShutterstock.jsx"
-//import ImageSearchPixabay from "./ImageSearchPixabay.jsx"
-//import ImageSearchFlickr from "./ImageSearchFlickr.jsx"
-
 import './App.css'
 
 const blob = shuffler(food);
@@ -22,7 +18,6 @@ function App()
       <ImageSearch blob={blob} current={current} />
       <div className="tile">
         <Tile
-          src={blob[current].img}
           en={blob[current].en}
           fr={blob[current].fr}
           es={blob[current].es}
