@@ -15,8 +15,7 @@ function App()
 
   return (
     <div className="flex flex-col items-center justify-center h-screen">
-      <h1>{blob[current].fr} {blob[current].es} {blob[current].pt}{blob[current].it}</h1>
-  <ImageSearch blob={blob} current={current} />
+      <ImageSearch blob={blob} current={current} />
   
   <div className="mt-8">
     <Tile

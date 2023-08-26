@@ -1,7 +1,7 @@
 import VocabBox from "./VocabBox"
 import {shuffler} from "./tools/shuffler.js"
 
-export default function Tile({ en, src, fr, es, pt, it, quiz, setQuiz}) 
+export default function Tile({ fr, es, pt, it, quiz, setQuiz}) 
 {
   let dialects = [
     { vocab: fr, flag: "fr"},
