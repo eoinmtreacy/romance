@@ -31,14 +31,21 @@ export default function Tile({ en, src, fr, es, pt, it, quiz, setQuiz})
     quiz ? setQuiz(false) : setQuiz(true)
   }
     return (
-      <>
-      <div>
-        <>{buttons}</>
-      </div>
-      <div>
-        <button onClick={handleQuizClick}>{quiz ? "Do Over" : "Quiz"}</button>
-      </div>
-      </>
+      <div className="flex flex-col items-center justify-center">
+  <div className="mb-4">
+    <>{buttons}</>
+  </div>
+  
+  <div>
+    <button
+      onClick={handleQuizClick}
+      className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-300 transition-all"
+    >
+      {quiz ? "Do Over" : "Quiz"}
+    </button>
+  </div>
+</div>
+
     );
   }
   
