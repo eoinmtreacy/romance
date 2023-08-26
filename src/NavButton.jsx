@@ -21,6 +21,15 @@ export default function NavButton({ direction, current, setCurrent, blob, quiz, 
               }
     } 
 
-    return <button onClick={handleClick}>{label}</button>;
+    return <button
+    onClick={handleClick}
+    className="bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-4 rounded-md focus:outline-none focus:ring-2 focus:ring-green-300 transition-all px-3 py-2"
+  >
+    {label}
+  </button>
+  
+  
+  
+  ;
   }
   
