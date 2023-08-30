@@ -2,7 +2,7 @@ export default function Score({score})
 {
     return(
         <div>
-            <p></p>
+            <p>{score}</p>
         </div>
     )
 }

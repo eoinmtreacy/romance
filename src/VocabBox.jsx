@@ -14,7 +14,8 @@ export default function VocabBox ({lang, flag, isTarget, quiz, score, setScore})
       if (dist === 0) {
         console.log("Animation activated!");
         setShouldAnimate(true);
-        setScore(score++);
+        setScore(score + 1);
+        console.log(score)
 
         setTimeout(() => {
           setShouldAnimate(false);

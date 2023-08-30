@@ -4,6 +4,7 @@ import Tile from "./Tile.jsx";
 import NavButton from "./NavButton.jsx";
 import { shuffler } from "./tools/shuffler.js";
 import ImageSearch from "./image-request/ImageSearch.jsx";
+import Score from "./Score.jsx"
 
 const blob = shuffler(food);
 
@@ -16,6 +17,7 @@ function App()
 
   return (
     <div className="flex flex-col items-center justify-center h-screen">
+      <Score score={score}/>
       <ImageSearch blob={blob} current={current} urlArr={urlArr} setUrlArr={setUrlArr}/>
   
   <div className="mt-8">
