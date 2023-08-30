@@ -35,19 +35,23 @@ const ImageSearch = ({ current, blob, urlArr, setUrlArr }) => {
 
   return (
     <div className="font-sans grid grid-cols-1 content-center">
-      <div className="content-center">
-        <h3 className="mb-2 text-gray-600">Source: Pexel</h3>
-        {urlArr[current] && ( // Display image when it's available
-          <div className="w-[25vw] h-[25vw] mb-2 relative">
-            <img
-              src={urlArr[current]}
-              alt="Searched"
-              className="w-full h-full rounded-lg object-cover object-center"
-            />
+    <div className="content-center">
+      <h3 className="mb-2 text-gray-600">Source: Pexel</h3>
+      {urlArr[current] && (
+        <div className="w-[25vw] h-[25vw] mb-2 relative group">
+          <img
+            src={urlArr[current]}
+            alt="Searched"
+            className="w-full h-full rounded-lg object-cover object-center transition-opacity duration-300 ease-in-out group-hover:opacity-25"
+          />
+          <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out">
+            <p className="text-white text-2xl bg-gray-800 bg-opacity-30 p-4 rounded-lg">{blob[current].en}</p>
           </div>
-        )}
-      </div>
+        </div>
+      )}
     </div>
+  </div>
+  
   );
 };
 
