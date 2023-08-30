@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
-const ImageSearch = ({ current, blob }) => {
-  const [urlArr, setUrlArr] = useState([]);
+const ImageSearch = ({ current, blob, urlArr, setUrlArr }) => {
   const apiKey = 'qSzMCedWrSstW0PhIwfvY72moOSWQfMgWPT9bxHTcxkyCuUiZM4rTA1i';
 
   useEffect(() => {

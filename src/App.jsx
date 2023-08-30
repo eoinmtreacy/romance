@@ -11,11 +11,12 @@ const blob = shuffler(food);
 function App() 
 {
   const [current, setCurrent] = useState(0);
-  const [quiz, setQuiz] = useState(false)
+  const [quiz, setQuiz] = useState(false);
+  const [urlArr, setUrlArr] = useState([]);
 
   return (
     <div className="flex flex-col items-center justify-center h-screen">
-      <ImageSearch blob={blob} current={current} />
+      <ImageSearch blob={blob} current={current} urlArr={urlArr} setUrlArr={setUrlArr}/>
   
   <div className="mt-8">
     <Tile
@@ -30,8 +31,8 @@ function App()
   </div>
   
   <div className="mt-8 flex">
-    <NavButton direction={false} current={current} setCurrent={setCurrent} blob={blob} quiz={quiz} setQuiz={setQuiz}/>
-    <NavButton direction={true} current={current} setCurrent={setCurrent} blob={blob} quiz={quiz} setQuiz={setQuiz}/>
+    <NavButton direction={false} current={current} setCurrent={setCurrent} blob={blob} quiz={quiz} setQuiz={setQuiz} urlArr={urlArr}/>
+    <NavButton direction={true} current={current} setCurrent={setCurrent} blob={blob} quiz={quiz} setQuiz={setQuiz} urlArr={urlArr}/>
   </div>
 </div>
 

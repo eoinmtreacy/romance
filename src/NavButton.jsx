@@ -1,10 +1,10 @@
-export default function NavButton({ direction, current, setCurrent, blob, quiz, setQuiz }) {
+export default function NavButton({ direction, current, setCurrent, blob, quiz, setQuiz, urlArr}) {
     let label = direction ? ">" : "<";
     
     function handleClick()
     {
       
-      if (direction === true && current < blob.length - 1) 
+      if (direction === true && current < blob.length - 1 && current < urlArr.length - 1) 
       {
           setCurrent(current + 1)
           if (quiz == true)
