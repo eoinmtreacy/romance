@@ -4,7 +4,6 @@ import Tile from "./Tile.jsx";
 import NavButton from "./NavButton.jsx";
 import { shuffler } from "./tools/shuffler.js";
 import ImageSearch from "./image-request/ImageSearch.jsx";
-import './App.css'
 
 const blob = shuffler(food);
 
