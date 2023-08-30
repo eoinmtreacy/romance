@@ -122,7 +122,7 @@ function normalizeCharacter(char) {
       'k': 'k',
       'l': 'l',
       'm': 'm',
-      'n': 'n',
+      'n': 'n', 'ñ' : 'n',
       'o': 'o', 'ó': 'o', 'ò': 'o', 'ô': 'o', 'ö': 'o', 'õ': 'o', 'ø': 'o',
       'p': 'p',
       'q': 'q',

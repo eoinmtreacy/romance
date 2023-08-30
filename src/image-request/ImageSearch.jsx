@@ -36,7 +36,7 @@ const ImageSearch = ({ current, blob, urlArr, setUrlArr }) => {
   return (
     <div className="font-sans grid grid-cols-1 content-center">
     <div className="content-center">
-      <h3 className="mb-2 text-gray-600">Source: Pexel</h3>
+      <h3 className="mb-2 text-gray-600"><a href={urlArr[current]}>Photos provided by Pexels</a></h3>
       {urlArr[current] && (
         <div className="w-[25vw] h-[25vw] mb-2 relative group">
           <img
