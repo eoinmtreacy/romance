@@ -1,7 +1,7 @@
 import VocabBox from "./VocabBox"
 import {shuffler} from "./tools/shuffler.js"
 
-export default function Tile({ fr, es, pt, it, quiz, setQuiz}) 
+export default function Tile({ fr, es, pt, it, quiz, setQuiz, score, setScore}) 
 {
   let dialects = [
     { vocab: fr, flag: "fr"},
@@ -17,13 +17,13 @@ export default function Tile({ fr, es, pt, it, quiz, setQuiz})
 
   let buttons = dialects.map((d) => 
   (
-      <VocabBox lang={d.vocab} flag={d.flag} isTarget={false} quiz={quiz}/>
+      <VocabBox lang={d.vocab} flag={d.flag} isTarget={false} quiz={quiz} score={score} setScore={setScore} setQuiz={setQuiz}/>
   ))
 
   if (quiz === true) 
   {
     buttons.splice(0,1,
-      <VocabBox lang={dialects[0].vocab} flag={dialects[0].flag} isTarget={true} quiz={quiz}/>)
+      <VocabBox lang={dialects[0].vocab} flag={dialects[0].flag} isTarget={true} quiz={quiz} score={score} setScore={setScore} setQuiz={setQuiz}/>)
   }
 
   function handleQuizClick() 
