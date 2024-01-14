@@ -30,7 +30,7 @@ export default function VocabBox ({lang, flag, isTarget, quiz, score, setScore, 
       <img
         className="filter brightness-125 hover:brightness-100 transition-all p-2"
         alt={lang}
-        src={"/" + flag + ".svg"}
+        src={"/romance/" + flag + ".svg"}
       />
       <input
   type="text"
