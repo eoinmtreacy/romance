@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { lvs } from "./tools/lvs";
 
-export default function VocabBox ({lang, flag, isTarget, quiz, score, setScore}) {
+export default function VocabBox ({lang, flag, isTarget, quiz, score, setScore, setQuiz}) {
   const [guess, setGuess] = useState("");
   const [shouldAnimate, setShouldAnimate] = useState(false);
 
@@ -12,14 +12,15 @@ export default function VocabBox ({lang, flag, isTarget, quiz, score, setScore})
       dist = lvs(guess, lang);
 
       if (dist === 0) {
-        console.log("Animation activated!");
         setShouldAnimate(true);
         setScore(score + 1);
-        console.log(score)
 
         setTimeout(() => {
           setShouldAnimate(false);
         }, 1500);
+
+        setQuiz(false)
+        setGuess("")
       }
     }
   }, [guess, isTarget, lang, quiz]);
@@ -39,7 +40,6 @@ export default function VocabBox ({lang, flag, isTarget, quiz, score, setScore})
   value={isTarget ? guess : lang}
   onChange={isTarget ? (e) => setGuess(e.target.value) : (e) => setGuess(lang)}
 />
-
     </div>
   );
 }

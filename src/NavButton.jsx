@@ -1,5 +1,5 @@
 export default function NavButton({ direction, current, setCurrent, blob, quiz, setQuiz, urlArr}) {
-    let label = direction ? ">" : "<";
+    let label = direction ? ">" : "<"
     
     function handleClick()
     {
